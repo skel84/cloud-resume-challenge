@@ -1,10 +1,9 @@
 <svelte:head>
   <link rel="stylesheet" href="src/scribbler-global.css">
   <link rel="stylesheet" href="src/scribbler-landing.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
   <script>hljs.initHighlightingOnLoad();</script>
 </svelte:head>
-
 
 <script>
   let count = 0;
@@ -18,7 +17,6 @@ window.onload = function () {
       count = data;
   });
 }
-
 </script>
 
 <nav>
