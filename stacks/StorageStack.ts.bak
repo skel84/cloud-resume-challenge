@@ -1,0 +1,17 @@
+import { Bucket, Table } from "@serverless-stack/resources";
+  
+  export function StorageStack({ stack, app }) {
+    // Create the table
+    const table = new Table(stack, "Counter", {
+      fields: {
+        counter: "string",
+      },
+      primaryIndex: { partitionKey: "counter" },
+    });
+  
+    // Show the URLs in the output
+    return {
+        table,
+      };
+  }
+  

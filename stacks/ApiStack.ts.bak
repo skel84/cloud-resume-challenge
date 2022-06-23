@@ -1,0 +1,33 @@
+import { Api, use } from "@serverless-stack/resources";
+import { StorageStack } from "./StorageStack.ts.bak.ts.bak";
+
+  
+  export function ApiStack({ stack, }) {
+
+    const { table } = use(StorageStack);
+    // Create a HTTP API
+    const api = new Api(stack, "Api", {
+      defaults: {
+        function: {
+          // Allow the API to access the table
+          permissions: [table],
+          // Pass in the table name to our API
+          environment: {
+            tableName: table.tableName,
+          },
+        },
+      },
+      routes: {
+        "POST /": "functions/lambda.main",
+      },
+    });
+
+    // Show the API endpoint in the output
+    stack.addOutputs({
+      ApiEndpoint: api.url,
+    });
+    return {
+        api,
+      };
+  }
+  

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Francesco Cislaghi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+    <link rel="author" href="humans.txt">
+    <link rel="icon" type="image/png" href="src/assets/images/favicon.png">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <div class="hero">
+      <h1 class="hero__title">Francesco Cislaghi</h1>
+      <p class="hero__description"> <a href="tel:+393428354734">📞 +393428354734 </a> | <a href="mailto:francesco.cislaghi@live.it">✉️ francesco@cislaghi.io</a> | <a href="https://www.francescops.it"> 🌍 https://www.francescops.it</a> </p>
+    </div>
+    <div class="hero__terminal">
+      <pre>
+        <code class="shell-session demo">Hello there! 👋</code>
+      </pre>
+    </div>
+    
+    <div class="experience">
+      <div class="wrapper">
+        <h2 class="section__title">Professional Experience</h2>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://en.bewatec.com">
+              <img class="resize" src="src/assets/images/bewatec.jpeg" alt="Bewatec">
+              <h4 class="experience__title">Bewatec - Berlin (Remote) <br> Senior DevOps Engineer </h4>
+            </a>
+            <small class="experience__date">Mar 2020 - Present</small>            
+          </div>
+          <div class="experience__detail">
+            Collaborated closely with the CTO and Engineering Leads to take the old infrastructure based on EC2 and docker to the next level
+            <ul>
+              <li>Promoted Devops culture in the company, mentored 2 other team members</li>
+              <li>Assessed AWS setup and coordinated the implementation of best practices architecture: 4 subaccounts (sandbox, integration, staging, production)</li>
+              <li>Developed a solution with more than 50 Terraform modules Helm, Kustomize</li>
+              <li>Set up Kubernetes infrastructure on AWS/EKS, resulting in 99.95% uptime</li>
+              <li>Set up monitoring with Prometheus / Grafana, logging with Loki / Promtail, reduced MTTR to below 1 hour</li>
+              <li>CI/CD solution with CircleCI and GitOps (FluxCD), with an average of 50 deployments per day</li>
+              <li>Migrated a project from EC2 to Kubernetes, resulting to possible deployment from once every 2 weeks to everyday</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://www.mercedes-benz.com/en/innovation/lab1886-the-global-innovation-machinery/">
+              <img class="resize" src="src/assets/images/lab1886.jpeg" alt="Lab1886">
+              <h4 class="experience__title">Daimler | Lab1886 - Berlin <br> Senior DevOps Engineer</h4>
+            </a>
+            <small class="experience__date">Oct 2019 - Mar 2020</small>
+          </div>
+          <div class="experience__detail">
+          Managed existing cloud infrastructure, setting up pipelines using GitLab, Cloudformation and Terraform
+            <ul>
+              <li>Management of around 50 Debian based Linux servers using Ansible</li>
+              <li>Data pipeline based on Hadoop and Mesos, ingesting tens of GB per day</li>
+              <li>Moved 5 Ruby on Rails services to Docker for the Kubernetes migration</li>
+              <li>Introduced a customized Java S3 driver: analytics data split between on-premise HDFS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://zms.zalando.com">
+              <img class="resize" src="src/assets/images/zms.jpeg" alt="ZMS">
+              <h4 class="experience__title">Nuggad | Zalando Marketing Services <br> Senior System Engineer </h4>
+            </a>
+            <small class="experience__date">Dec 2017 - Sep 2019</small><br><br>
+          </div>
+          <div class="experience__detail">
+            Operated a digital marketing platform with more than 50k request per minute running on bare metal servers and engineered the migration to Kubernetes
+            <ul>
+              <li>Management of around 50 Debian based Linux servers using Ansible</li>
+              <li>Data pipeline based on Hadoop and Mesos, ingesting tens of GB per day</li>
+              <li>Moved 5 Ruby on Rails services to Docker for the Kubernetes migration</li>
+              <li>Introduced a customized Java S3 driver: analytics data split between on-premise HDFS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://relayr.io">
+              <img class="resize" src="src/assets/images/relayr.jpeg" alt="Fyber">
+              <h4 class="experience__title">Relayr - Berlin <br> Senior Cloud Engineer </h4>
+            </a>
+            <small class="experience__date">Jun 2016 - Nov 2017</small>
+          </div>
+          <div class="experience__detail">
+            In a team of 4 people, supporting the developer and modernizing the platform.
+            <ul>
+              <li>Designed and implemented the infrastructure as code using Terraform, split in 3 environments</li>
+              <li>Built a CI/CD pipeline using Jenkins and packer, consisting of around 10 services</li>
+              <li>Creation of PAAS-like infrastructure: conducted the migration from Docker Swarm to ECS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://www.fyber.com">
+              <img class="resize" src="src/assets/images/fyber.webp" alt="Fyber">
+              <h4 class="experience__title">Fyber - Berlin <br> Linux System Engineer</h4>
+            </a>  
+            <small class="experience__date">Jan 2015 - May 2016</small>
+          </div>
+          <div class="experience__detail">
+            Part of the DevOps team, operating a platform serving 100s of thousands of requests per day
+            <ul>
+              <li>AWS integration with bare metal based Datacenter: Terraform, Packer, S3, ELB, EC2, VPC,Autoscaling</li>
+              <li>Development of a container based PAAS based on Mesos, Marathon, Docker, Consul, Nginx, HAProxy</li>
+              <li>Setup of bare metal provisioning system: Puppetlabs razor-server, based on PXE, DHCP and automated DNS updates, resulting in a server deployed and configured in less than 10 minutes</li>
+              <li>Managed and monitored more than 100 CentOS Linux servers with Chef</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://www.chebanca.it">
+              <img class="resize" src="src/assets/images/chebanca.jpeg" alt="CheBanca!">
+              <h4 class="experience__title">CheBanca! - Milano <br> Unix System Engineer</h4>
+            </a>
+            <small class="experience__date">Apr 2011 - Dec 2014</small><br>
+          </div>
+          <div class="experience__detail">
+            In a team of 3 System Administrator taking care of the lower level of the infrastructure (OS, Storage, Server Hardware), made sure the high traffic home banking website runs smoothly with no downtime
+            <ul>
+              <li>Built a central logging solution based on Syslog-ng, ingesting 1000s of lines of codes every minute</li>
+              <li>Nagios based monitoring platform with 1000+ devices monitored and 20000+ checks performed every few minutes</li>
+              <li>Deployed a puppet based configuration management platform that could provision in less than 10 minutes based on rules defined by code</li>
+              <li>Operated 200 Red Hat Linux and 50 AIX Servers and automated tasks using bash scripts</li>
+              <li>VMWare: Creation of script for batch deployments of new servers, templates, Datastore management, upgrade and patching, resulting in 70% increase of Virtual Machine creation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://www.eni.com/">
+              <img class="resize" src="src/assets/images/eni.jpeg" alt="Eni">
+              <h4 class="experience__title">Eni - Milano <br>  Business Intelligence Consultant </h4>
+              <small class="experience__date">Apr 2011 - Dec 2014</small>
+            </a>
+          </div>
+          <div class="experience__detail">
+            Part of the DevOps team, operating a platform serving 100s of thousands of requests per day
+            <ul>
+              <li>Prepare functional or technical documentation for business intelligence systems based on SAP Business Objects</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__meta">
+            <a href="https://www.ericsson.com/en">
+              <img class="resize" src="src/assets/images/ericsson.jpeg" alt="Eni">
+              <h4 class="experience__title">H3G ERICSSON - Milano <br> Unix System Engineer</h4>
+              <small class="experience__date">Jun 2008 - Oct 2010</small>
+            </a>
+          </div>
+          <div class="experience__detail">
+            <ul>
+              <li>Coordinated a small group of 5 people in planning and performing release deployment</li>
+            </ul>
+          </div>
+        </div>       
+        <div class="experience__item">
+          <div class="experience__meta">
+            <img class="resize" src="src/assets/images/telecom.jpeg" alt="Eni">
+            <a href="https://www.tim.it">
+            <h4 class="experience__title">Telecom Italia - Milano <br> Datawarehouse Consultant</h4>
+            </a>
+            <small class="experience__date">Feb 2008 - Jun 2008</small>
+          </div>
+          <div class="experience__detail">
+            <br><br>
+            <ul>
+              <li> On the job experience after a professional Linux / Datawarehouse course </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="skills">
+      <div class="wrapper">
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__item">
+          <div class="skills__meta">
+            <h4 class="skills__title">Cloud computing</h4><br>
+            <img class="resize" src="src/assets/images/aws.jpeg" alt="AWS">
+          </div>
+          <div class="skills__detail">
+            <ul>
+              <li>6 years of experience, certfied Solution Architect Associate</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skills__item">
+          <div class="skills__meta">
+            <h4 class="skills__title">Operating Systems</h4><br>
+            <img src="src/assets/images/redhat.png" alt="RedHat"> <img src="src/assets/images/ubuntu.png" alt="Ubuntu">  
+          </div>
+          <div class="skills__detail">
+            <ul>
+              <li>11 years of experience with various distros: RedHat, CentOS, Debian, Ubuntu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skills__item">
+          <div class="skills__meta">
+            <h4 class="skills__title">Infrastructure as Code</h4><br>
+            <img src="src/assets/images/terraform.png" alt="Terraform"> <img src="src/assets/images/cloudformation.png" alt="Cloudformation"> <img src="src/assets/images/cdk.jpeg" alt="CDK">
+          </div>
+          <div class="skills__detail">
+            <ul>
+              <li>Terraform: 6 years of experience building AWS infrastructure with terraform and terragrunt</li>
+              <li>Cloudformation: 2 years of experience</li>
+              <li>CDK: 1 year of experience</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skills__item">
+          <div class="skills__meta">
+            <h4 class="skills__title">Container Orchestration</h4><br>
+            <img src="src/assets/images/kubernetes.png" alt="Kubernetes"> <img src="src/assets/images/ecs.png" alt="ECS">
+          </div>
+          <div class="skills__detail">
+            <ul>
+              <li>Kubernetes: 4 years of experience with EKS and k3s</li>
+              <li>ECS: 2 years of experience</li>
+            </ul>
+          </div>
+        </div>
+      <div class="skills__item">
+        <div class="skills__meta">
+          <h4 class="skills__title">CI/CD Pipelines</h4><br>
+          <img src="src/assets/images/circleci.png" alt="CircleCI"> <img src="src/assets/images/jenkins.jpeg" alt="Jenkins">  <img src="src/assets/images/gitlab.png" alt="Gitlab"> <img src="src/assets/images/githubactions.png" alt="Github Actions">
+        </div>
+        <div class="skills__detail">
+          <ul>
+            <li>Several years of experience with various tools: CircleCI, Jenkins, Gitlab, Github Actions</li>
+    
+          </ul>
+        </div>
+      </div>
+      <div class="skills__item">
+        <div class="skills__meta">
+          <h4 class="skills__title">Scripting and Automation</h4><br>
+          <img src="src/assets/images/bash.jpeg" alt="Bash"> <img src="src/assets/images/python.jpeg" alt="Python">
+        </div>
+        <div class="skills__detail">
+          <ul>
+            <li>Extended experience with Bash and some experience with Python</li>
+          </ul>
+        </div>
+      </div>       
+    </div>
+    </div>
+     <div class="skills">
+      <div class="wrapper">
+        <h2 class="section__title">Education</h2>
+            <h4 class="skills__title">IULM University Milano:</h4>Attended Media and Communication Sciences
+        </div>
+    </div>
+  </body>
+</html>
