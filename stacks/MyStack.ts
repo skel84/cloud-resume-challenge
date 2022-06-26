@@ -17,8 +17,8 @@ export function MyStack({ stack, app }: StackContext) {
   // Create a HTTP API
   const api = new Api(stack, "Api", {
     customDomain: {
-      domainName: "resume-api.test.cislaghi.io",
-      hostedZone: "test.cislaghi.io",
+      domainName: "resume-api.cislaghi.io",
+      hostedZone: "cislaghi.io",
       path: "v1",
     },
     defaults: {
