@@ -14,11 +14,11 @@ commands:
   npm_install:
     description: 'Install node modules'
     steps: 
-      run: npm ci
+      - run: npm ci
   sst_deploy:
     description: 'Deploy Serverless Stack'
     steps: 
-      run: npm run deploy
+      - run: npm run deploy
 
 jobs:
   deploy:
