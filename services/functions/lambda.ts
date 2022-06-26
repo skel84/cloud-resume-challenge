@@ -31,8 +31,9 @@ export async function main() {
   };
   await dynamoDb.update(putParams).promise();
 
+
   return {
     statusCode: 200,
-    body: count,
+    body: `${count}`,
   };
 }

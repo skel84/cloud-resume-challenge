@@ -2,7 +2,7 @@ import {
   Api,
   StackContext,
   Table,
-  ViteStaticSite,
+  StaticSite,
 } from "@serverless-stack/resources";
 
 export function MyStack({ stack, app }: StackContext) {
@@ -16,6 +16,11 @@ export function MyStack({ stack, app }: StackContext) {
 
   // Create a HTTP API
   const api = new Api(stack, "Api", {
+    customDomain: {
+      domainName: "resume-api.test.cislaghi.io",
+      hostedZone: "test.cislaghi.io",
+      path: "v1",
+    },
     defaults: {
       function: {
         // Allow the API to access the table
@@ -32,20 +37,16 @@ export function MyStack({ stack, app }: StackContext) {
   });
 
   // Deploy our Svelte app
-  const site = new ViteStaticSite(stack, "SvelteJSSite", {
+  const site = new StaticSite(stack, "StaticSite", {
     customDomain: 
       app.stage == "test"
         ? {
-        domainName: "resume.test.cislaghi.io",
+        domainName: "francesco.test.cislaghi.io",
         // domainAlias: "www.domain.com",
         hostedZone: "test.cislaghi.io"
         }
       : undefined,
     path: "frontend",
-    environment: {
-      // Pass in the API endpoint to our app
-      VITE_APP_API_URL: api.url,
-    },
   });
 
   // Show the URLs in the output

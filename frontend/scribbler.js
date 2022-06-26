@@ -13,17 +13,11 @@ var getAll = function (selector, scope) {
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = `
-Welcome to my online resume!
+Welcome to my online resume! 
 This is the result of the Cloud Resume Challenge 👉 https://cloudresumechallenge.dev ☁️
-- Hosted on an S3 bucket
-- Display the number of visits 
-- Lambda function fetches data about visits from a dynamodb table
-- Infrastructure as code defined by serverless stack 👉 https://serverless-stack.com/
-- Deployed using a CircleCI pipeline 
-
-For more infortmation about how this was built, visit my website 👉 https://www.francescops.it
-
-Thank you! 🙏
+It's hosted on an S3 bucket, uses a lambda function to query a dynamodb table to display the number of visits and is deployed using a CircleCI pipeline. 
+For more infortmation about how this was built, visit my website https://www.francescops.it. 
+Thank you!
 `
   var speed = 30;
 
