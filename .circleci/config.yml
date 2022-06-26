@@ -33,7 +33,4 @@ workflows:
   deploy-prod:
     # <<: *only_main
     jobs:
-      - npm_install
-      - sst_deploy:
-          requires:
-            - npm_install
+      - deploy
