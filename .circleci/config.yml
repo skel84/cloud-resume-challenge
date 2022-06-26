@@ -8,7 +8,7 @@ only_main: &only_main
 executors:
   node:
     docker: 
-      - image: cimg/node:14
+      - image: cimg/node:14.19
 
 commands:
   npm_install:
