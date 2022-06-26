@@ -23,8 +23,6 @@ commands:
 jobs:
   deploy:
     executor: node
-    context:
-      - deploy_test
     steps:
       - checkout
       - npm_install
@@ -35,5 +33,7 @@ workflows:
   version: 2
   deploy-prod:
     # <<: *only_main
+    context:
+      - deploy_test
     jobs:
       - deploy
