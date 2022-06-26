@@ -1,0 +1,39 @@
+version: 2.1
+
+only_main: &only_main
+  filters:
+    branches:
+      only: main
+
+executors:
+  node:
+    docker: 
+      - image: cimg/node:14
+
+commands:
+  npm_install:
+    description: 'Install node modules'
+    steps: 
+      run: npm ci
+  sst_deploy:
+    description: 'Deploy Serverless Stack'
+    steps: 
+      run: npm run deploy
+
+jobs:
+  deploy:
+    executor: node
+    steps:
+      - npm_install
+      - sst_deploy
+
+
+workflows:
+  version: 2
+  deploy-prod:
+    # <<: *only_main
+    jobs:
+      - npm_install
+      - sst_deploy:
+          requires:
+            - npm_install

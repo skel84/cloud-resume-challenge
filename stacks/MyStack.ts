@@ -39,11 +39,11 @@ export function MyStack({ stack, app }: StackContext) {
   // Deploy our Svelte app
   const site = new StaticSite(stack, "StaticSite", {
     customDomain: 
-      app.stage == "test"
+      app.stage == "prod"
         ? {
-        domainName: "francesco.test.cislaghi.io",
+        domainName: "francesco.cislaghi.io",
         // domainAlias: "www.domain.com",
-        hostedZone: "test.cislaghi.io"
+        hostedZone: "cislaghi.io"
         }
       : undefined,
     path: "frontend",
