@@ -72,6 +72,8 @@ workflows:
           context:
               - deploy_test
       - cypress/run:
+          context:
+            - cypress  
           requires:
             - deploy
           record: true
