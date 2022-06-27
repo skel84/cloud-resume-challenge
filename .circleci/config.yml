@@ -1,9 +1,12 @@
 version: 2.1
 
-only_main: &only_main
+ignore_main: &ignore_main
   filters:
     branches:
-      only: main
+      ignore: main
+
+orbs:
+  cypress: cypress-io/cypress@1
 
 executors:
   node:
@@ -11,29 +14,66 @@ executors:
       - image: cimg/node:14.19
 
 commands:
-  npm_install:
+  install:
     description: 'Install node modules'
     steps: 
       - run: npm ci
-  sst_deploy:
+  build:
+    description: 'Install node modules'
+    steps: 
+      - run: npm build      
+  deploy:
     description: 'Deploy Serverless Stack'
     steps: 
       - run: npm run deploy
 
+references:
+  workspace_root: &workspace_root .
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
 jobs:
-  deploy:
+  setup:
     executor: node
     steps:
       - checkout
-      - npm_install
-      - sst_deploy
+      - restore_cache:
+          key: v0-deps-{{ checksum "package.json" }}
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-deps-{{ checksum "package.json" }}       
+      - install
+      - build
+      - persist_to_workspace: # store this folder for other jobs
+          root: *workspace_root
+          paths:
+            - . 
 
+  deploy: 
+    executor: node
+    steps:
+      - *attach_workspace
+      - deploy
 
 workflows:
   version: 2
   deploy-prod:
     jobs:
+      - setup:
+          <<: *ignore_main
+          context:
+              - deploy_test    
       - deploy:
-          # <<: *only_main
+          <<: *ignore_main
+          requires: 
+            - setup
           context:
               - deploy_test
+      - cypress/run:
+          context:
+            - cypress  
+          requires:
+            - deploy
+          record: true
