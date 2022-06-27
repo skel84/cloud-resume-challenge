@@ -58,6 +58,7 @@ jobs:
       - deploy
 
   test:
+    executor: node
     steps:
       - *attach_workspace
       - cypress/run
