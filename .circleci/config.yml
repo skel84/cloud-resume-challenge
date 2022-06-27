@@ -57,13 +57,6 @@ jobs:
       - *attach_workspace
       - deploy
 
-  test:
-    executor: node
-    steps:
-      - *attach_workspace
-      - cypress/run
-
-
 workflows:
   version: 2
   deploy-prod:
@@ -78,7 +71,6 @@ workflows:
             - setup
           context:
               - deploy_test
-      - test:
-          <<: *ignore_main
-          requires: 
-            - deploy        
+      - cypress/run:
+          requires:
+            - deploy
