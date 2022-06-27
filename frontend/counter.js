@@ -1,4 +1,4 @@
-const url = 'https://mj0qvforje.execute-api.eu-central-1.amazonaws.com';
+const url = 'https://zf6k4fqkc9.execute-api.eu-central-1.amazonaws.com';
 
 fetch(url, {method: "POST"})
     .then(function (response) {

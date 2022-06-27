@@ -16,11 +16,14 @@ export function MyStack({ stack, app }: StackContext) {
 
   // Create a HTTP API
   const api = new Api(stack, "Api", {
-    customDomain: {
-      domainName: "resume-api.cislaghi.io",
-      hostedZone: "cislaghi.io",
-      path: "v1",
-    },
+    customDomain: 
+      app.stage == "prod"
+        ? {
+        domainName: "resume-api.cislaghi.io",
+        // domainAlias: "www.domain.com",
+        hostedZone: "cislaghi.io"
+        }
+      : undefined,
     defaults: {
       function: {
         // Allow the API to access the table
