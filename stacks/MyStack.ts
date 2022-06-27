@@ -16,11 +16,14 @@ export function MyStack({ stack, app }: StackContext) {
 
   // Create a HTTP API
   const api = new Api(stack, "Api", {
-    customDomain: {
-      domainName: "resume-api.test.cislaghi.io",
-      hostedZone: "test.cislaghi.io",
-      path: "v1",
-    },
+    customDomain: 
+      app.stage == "prod"
+        ? {
+        domainName: "resume-api.cislaghi.io",
+        // domainAlias: "www.domain.com",
+        hostedZone: "cislaghi.io"
+        }
+      : undefined,
     defaults: {
       function: {
         // Allow the API to access the table
@@ -39,11 +42,11 @@ export function MyStack({ stack, app }: StackContext) {
   // Deploy our Svelte app
   const site = new StaticSite(stack, "StaticSite", {
     customDomain: 
-      app.stage == "test"
+      app.stage == "prod"
         ? {
-        domainName: "francesco.test.cislaghi.io",
+        domainName: "francesco.cislaghi.io",
         // domainAlias: "www.domain.com",
-        hostedZone: "test.cislaghi.io"
+        hostedZone: "cislaghi.io"
         }
       : undefined,
     path: "frontend",

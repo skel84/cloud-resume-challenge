@@ -1,5 +1,5 @@
 {
-  "name": "@svelte-app/services",
+  "name": "@cloud-resume-challenge/services",
   "version": "0.0.0",
   "type": "module",
   "scripts": {},
