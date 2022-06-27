@@ -74,3 +74,4 @@ workflows:
       - cypress/run:
           requires:
             - deploy
+          record: true
